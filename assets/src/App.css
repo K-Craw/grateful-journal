@@ -9,11 +9,22 @@
   max-width: 90vw;
   margin: 30px auto;
   overflow: auto;
-  height: 80vh;
+  height: 75vh;
   border: 1px solid rgb(138, 189, 234);
   padding: 30px;
   margin-bottom: 100px;
   border-radius: 5px;
+}
+
+.title {
+  font-family: 'Times New Roman', Times, serif;
+  margin: 20px;
+  margin-left: 75px;
+  width: 20%;
+}
+
+.title hr {
+  border: 1px solid black
 }
 
 .entryBar {
@@ -32,4 +43,13 @@
   background-color: black;
   color: white;
   padding: 10px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  height: 10vh;
+  color: darkgrey;
 }
