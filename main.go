@@ -20,19 +20,22 @@ var entries = []entry{
 	{ID: "3", Entry: "I made third message", Date: "05/20/2022", User_ID: "user1"},
 }
 
-// func createEntry(c *gin.Context) {
-// 	var newEntry entry
-// 	if err := c.BindJSON(&newEntry); err != nil {
-// 		return
-// 	}
-// }
-
 func getEntry(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, entries)
+}
+
+func createEntry(c *gin.Context) {
+	var newEntry entry
+	if err := c.BindJSON(&newEntry); err != nil {
+		return
+	}
+	entries = append(entries, newEntry)
+	c.IndentedJSON(http.StatusCreated, newEntry)
 }
 
 func main() {
 	router := gin.Default()
 	router.GET("/entries", getEntry)
+	router.POST("/entries", createEntry)
 	router.Run("localhost:8080")
 }
