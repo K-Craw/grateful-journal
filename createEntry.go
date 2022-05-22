@@ -13,6 +13,8 @@ import (
 )
 
 func createEntry(c *gin.Context) {
+	c.Header("Access-Control-Allow-Origin", "*")
+	c.Header("Access-Control-Allow-Headers", "Content-Type")
 	var newEntry entry
 	if err := c.BindJSON(&newEntry); err != nil {
 		return

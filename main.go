@@ -7,6 +7,7 @@ import (
 	// "os"
 
 	"github.com/gin-gonic/gin"
+	cors "github.com/rs/cors/wrapper/gin"
 	// "errors"
 )
 
@@ -33,6 +34,7 @@ func checkErr(err error) {
 func main() {
 	router := gin.Default()
 	router.GET("/entries", GetEntry)
-	router.POST("/entries", createEntry)
+	router.POST("/home", createEntry)
+	router.Use(cors.Default())
 	router.Run("localhost:8080")
 }
