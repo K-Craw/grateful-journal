@@ -34,7 +34,7 @@ func checkErr(err error) {
 func main() {
 	router := gin.Default()
 	router.GET("/entries", GetEntry)
-	router.POST("/home", createEntry)
+	router.POST("/entries", createEntry)
 	router.Use(cors.Default())
 	router.Run("localhost:8080")
 }

@@ -26,7 +26,7 @@ const FetchDemo = () => {
   }
   return (
     <div>
-      <h1>Fetch Example</h1>
+      <h1>Posts</h1>
       {notes && <Notes data={notes} />}
       {isError && <div>Error fetching data.</div>}
     </div>
