@@ -1,6 +1,5 @@
 import React from 'react';
 import FetchDemo from './components/FetchDemo';
-import Entries from './components/Entries';
 import Post from './components/Post';
 
 function App() {
